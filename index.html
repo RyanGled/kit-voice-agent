@@ -3,32 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contxt Career Chat</title>
+  <title>Talk to Kit | Contxt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      background: #ffffff;
+      color: #111111;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      background: #f9fafb;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
     }
+    
+    /* Gradient swoosh background - matches Contxt site */
+    body::before {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      right: -10%;
+      width: 60%;
+      height: 60%;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(6, 182, 212, 0.1) 100%);
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+    }
+    
+    .container {
+      max-width: 480px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .logo {
+      width: 160px;
+      margin-bottom: 3rem;
+    }
+    
     h1 {
-      color: #111827;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 1rem;
+      line-height: 1.2;
     }
-    p {
-      color: #6b7280;
+    
+    h1 span {
+      color: #2563EB;
+    }
+    
+    .subtitle {
+      font-size: 1.125rem;
+      color: #6B7280;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    
+    .widget-container {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      padding: 2rem;
       margin-bottom: 2rem;
+    }
+    
+    .cta-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: #6B7280;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-hint svg {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .features {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: #374151;
+    }
+    
+    .feature svg {
+      color: #2563EB;
+      flex-shrink: 0;
+    }
+    
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: #9CA3AF;
+    }
+    
+    .footer a {
+      color: #2563EB;
+      text-decoration: none;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Talk To Kit</h1>
-  <p>Help us find your next role based on where you've previously done your best work.</p>
-
-<elevenlabs-convai agent-id="agent_8701kch82t3cehcsd0y3gty9rxfd"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <div class="container">
+    <!-- Logo -->
+    <svg class="logo" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Contxt icon -->
+      <circle cx="12" cy="12" r="10" fill="#4A90D9"/>
+      <circle cx="12" cy="28" r="7" fill="#2563EB"/>
+      <!-- Contxt text -->
+      <text x="35" y="28" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#111111">contxt</text>
+    </svg>
+    
+    <h1>Talk to <span>Kit</span></h1>
+    
+    <p class="subtitle">
+      Help us find your next role based on where you've previously done your best work.
+    </p>
+    
+    <div class="widget-container">
+      <div class="cta-hint">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+        Click to start your 5-minute career chat
+      </div>
+      
+      <elevenlabs-convai agent-id="yRj28bPXXAVRFxkPuKGC"></elevenlabs-convai>
+    </div>
+    
+    <div class="features">
+      <div class="feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        5 minutes
+      </div>
+      <div class="feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Private & secure
+      </div>
+      <div class="feature">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        Culture-first matching
+      </div>
+    </div>
+    
+    <p class="footer">
+      Powered by <a href="https://contxt.tech" target="_blank">Contxt</a> · We match you to teams, not just jobs.
+    </p>
+  </div>
+  
+  <elevenlabs-convai agent-id="agent_8701kch82t3cehcsd0y3gty9rxfd"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
